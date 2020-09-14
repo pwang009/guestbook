@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "frontend.fullname" . }}-config
+data:
+  guestbook-name: "PopRock Festival 2.0"
+  backend-uri: "http://backend.minikube.local/guestbook"

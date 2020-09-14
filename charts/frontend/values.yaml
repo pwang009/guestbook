@@ -1,0 +1,13 @@
+image:
+  repository: phico/frontend
+  imagePullPolicy: IfNotPresent
+  repoTag: "2.0"
+spec:
+  replicaCount: 1
+  containerPort: 4200
+ingress:
+  hostName: frontend.minikube.local
+service:
+  port: 80
+  protocol: TCP
+  type: ClusterIP 

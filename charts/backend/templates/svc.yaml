@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: {{ include "backend.fullname" . }}
+  name: {{ include "backend.fullname" . }}-svc
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - protocol: {{ .Values.service.portocol }}
+      port: 80
+      targetPort: {{ .Values.spec.containerPort }}
+  selector:
+    app: {{ include "backend.fullname" . }}-app

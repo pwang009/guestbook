@@ -1,0 +1,15 @@
+image:
+  repository: phico/backend
+  imagePullPolicy: IfNotPresent
+  repoTag: "2.0"
+spec:
+  replicaCount: 1
+  containerPort: 3000
+ingress:
+  hostName: backend.minikube.local
+service:
+  port: 80
+  protocol: TCP
+  type: ClusterIP 
+secret:
+  mongodb_uri: bW9uZ29kYjovL2FkbWluOnBhc3N3b3JkQG1vbmdvZGI6MjcwMTcvZ3Vlc3Rib29rP2F1dGhTb3VyY2U9YWRtaW4=
